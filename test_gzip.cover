@@ -1,0 +1,6 @@
+    1: import gzip
+       
+    1: with gzip.open("/home/yusuke/work/gzip/tmp.gz","rt") as f:
+    1:     plane = f.read()
+       
+    1: print(plane)

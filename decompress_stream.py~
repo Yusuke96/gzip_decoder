@@ -1,0 +1,19 @@
+import sys
+import zlib
+
+data_stream = open(sys.argv[1], "rb") #入力ファイル
+decomp_obj = zlib.decompressobj()
+decompressed = b''
+while True:
+    buf = data_stream.read(64)
+    if not buf:
+        decompressed += dobj.flush()
+        break
+    while True:
+        if not buf:
+            break
+        decompressed += decomp_obj.decompress(buf)
+        buf = decomp_obj.unconsumed_tail
+        
+print(decompressed)
+        
